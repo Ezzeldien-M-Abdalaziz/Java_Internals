@@ -21,33 +21,55 @@ public class Guest {
 
     }
 
-
-    public String getFirstName() {
-        return FirstName;
-    }
-    public void setFirstName(String FirstName) {
-        this.FirstName = FirstName;
+    public String toString() {
+        return FirstName + " " + LastName;
     }
 
-    public String getLastName() {
-        return LastName;
+    public void setLoyaltyProgramMember(Boolean loyaltyProgramMember) {
+        this.loyaltyProgramMember = loyaltyProgramMember;
     }
 
-    public void setLastName(String LastName) {
-        this.LastName = LastName;
-    }
 
 
     public static void main(String[] args) {
 
         Guest john = new Guest("John", "Doe", true);
-        Guest jane = new Guest("Jane", "Doe", false);
-        Guest jack = new Guest("Jack", "Doe", true);
-        Guest alice = new Guest("Alice", "Doe", true);
+        Guest jane = new Guest("Jane", "Doe", true);
+        Guest jack = new Guest("Jack", "Doe", false);
+        Guest alice = new Guest("Alice", "Doe", false);
+        Guest bob = new Guest("Bob", "Doe", true);
+        Guest charlie = new Guest("Charlie", "Doe", true);
 
 
         List<Guest> checkInList = new ArrayList<>(100);   //initial capacity of 100
+        checkInList.add(jack);
+        checkInList.add(alice);
+        print(checkInList);
 
+        //add( index, obj ) , addFirst()
+        checkInList.addFirst(john);   //could be addFirst()
+        print(checkInList);
+
+        //get()
+        checkInList.get(2).setLoyaltyProgramMember(true);
+
+        //addAll()
+        checkInList.addAll(1,List.of(bob , charlie));
+        print(checkInList);
+
+        //addLast
+        checkInList.addLast(jane);
+        print(checkInList);
+
+        //remove
+        checkInList.remove(2);
+        print(checkInList);
+
+        //size
+        System.out.println(checkInList.size());
+
+        //indexOf
+        System.out.println(checkInList.indexOf(john));
 
     }
 
