@@ -29,6 +29,14 @@ public class Guest {
         this.loyaltyProgramMember = loyaltyProgramMember;
     }
 
+    public boolean getLoyaltyProgramMember() {
+        return this.loyaltyProgramMember;
+    }
+
+    public List<Room> getPreferredRooms() {
+        return preferredRooms;
+    }
+
 
 
     public static void main(String[] args) {
