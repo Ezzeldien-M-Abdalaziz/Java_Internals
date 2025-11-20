@@ -36,6 +36,11 @@ public class Application {
             System.out.println("Room: " + r.getName() + " Guest: " + g);
         }
 
+        //there are
+            //keySet()
+            //entrySet()
+
+
 
     }
 }
