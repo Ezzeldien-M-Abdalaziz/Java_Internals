@@ -12,6 +12,7 @@ public class Application {
         Room piccadily = new Room("Piccadily", "guest room", 3, 164);
         Room oxford = new Room("oxford", "suite", 3, 120);
         Room victoria = new Room("victoria", "guest room", 3, 125);
+
         Room chanzilizah = new Room("chanzilizah", "guest room", 3, 125);
 
 
