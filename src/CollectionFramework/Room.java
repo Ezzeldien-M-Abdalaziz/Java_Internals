@@ -1,6 +1,16 @@
 package CollectionFramework;
 
-public class Room {
+import java.util.Comparator;
+import java.util.concurrent.CompletionException;
+
+public class Room implements Comparable<Room> {
+
+    //COMPARE USING THE RATE "Comparator"
+    public static Comparator<Room> PRICE_COMPARATOR = Comparator.comparing(Room::getPrice)
+                                                                .thenComparing(Room::getName)
+                                                                .thenComparing(Room::getType);
+
+
     private String name;
     private String city;
     private int capacity;
@@ -17,6 +27,16 @@ public class Room {
         this.rate = 10.0;
         this.type = "Room";
     }
+
+    @Override
+    public int compareTo(Room o) {
+        int result = this.getName().compareTo(o.getName());
+        return result != 0 ? result : this.getType().compareTo(o.getType());
+    }
+
+
+
+
 
     public String getType() {
         return type;
